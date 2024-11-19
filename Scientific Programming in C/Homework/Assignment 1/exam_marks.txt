@@ -1,0 +1,14 @@
+== Exam marks for Physics and Mathematics course SOP0301 - Winter 2023 ==
+Physics:     85 64 69 72 79
+Mathematics: 86 72 73 82 66
+
+Physics - Average: 73.80 
+Maths - Average: 75.80 
+Combined - Average: 74.80 
+
+Physics - Standard Deviation: 7.41 
+Maths - Standard Deviation: 7.22 
+Combined - Standard Deviation: 7.39 
+
+
+These results show the average performance and standard deviation in the marks of 5 students for Physics, Mathematics and both subjects combined.
