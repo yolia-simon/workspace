@@ -9,95 +9,395 @@
   <meta name="description" content="This is a page for meta tags in HTML"> <!--add description for your website-->
   <meta name="revised" content="Simplicode, 13/10/24"> <!--shows last changed info-->
   <meta name="author" content="Yolia Simon"> <!--author of the website-->
+
   <!--refreshes page every 3 sec
   <meta http-equiv="refresh" content="3"> -->
-  <title>Yolia's Portfolio</title>
+  <title>Yolia's Website</title>
 
   </head>
-  <Body background="images/background.jpg"></Body>
-  <body >
 
-  <h1><u>Yolia's Website</u></h1>
-  <br> <!-- This means line break -->
+  <!--css: cascading style sheets-->
+  <!--can also change image sizes in style section-->
+  <style>
 
-  <p>Welcome to my website! <a href="https://github.com/ZXLTRVN">This is my GitHub account :D</a></p>
-  <ul>
-    <li>portfolio</li>
-    <li>python</li>
-    <li>projects</li>
-    <li><strike>pinterest acc</strike> other interests <a href="http://google.com">Yarn</a></li>
-  </ul>
+    @font-face {
+      font-family: Persona5Menu;
+      src: url(fonts/Persona5MenuFont.ttf);
+    }
 
-  <p>I need a job. I like <em title="Ryuji is best"> persona</em> hello </p>
-
-  <p>Subscribe to my <abbr title="Youtube">YT</abbr> channel</p>
-
-  <address>
-    Youtube Office, <br>
-    123 Street, Sector-456, <br>
-    London, UK
-  </address>
-
-  <p>This is a <q>work in progress</q></p>
-
-  <code> <!-- how to write code in text -->
-    for(i=0; i < 3; i++)<br>
-    {<br>
-      console.log("hi");<br>
-    }<br>
-  </code>
-
-  <p id= "para1"> This is a <b>test</b> <i>paragraph <del>mistake </del></i> <br> <mark>important stuff here</mark> </p>
-
-  <table border="3px" bordercolor="blue"> <!--how to create a table-->
-    <caption>Restaurant Menu</caption>
-    <tr bgcolor="pink">
-      <th>Serial No.</th>
-      <th>Item</th>
-      <th>Price</th>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>Tea</td>
-      <td>£3</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>Coffee</td>
-      <td>£2.50</td>
-    </tr>
-    <tr> <!--merges 2 rows-->
-      <td rowspan="2">3</td>
-      <td>Juice</td>
-      <td>£1</td>
-    </tr>
-    <tr>
-      <td colspan="2">Grand total</td>
-      <td>£6.50</td>
-    </tr> <!--merges two cols-->
+    @font-face {
+      font-family: Persona5;
+      src: url(fonts/Persona5regfont.ttf);
+    }
 
 
-  </table>
+    html {
+      background-image: url(images/background.jpg);
+      font-family: Persona5;
+      color:rgb(101, 10, 123);
+      text-align: center;
+    }
 
-  <p> <font size="5" color="lighblue" face="verdana">testing information here</p>
+    body{
+      cursor: url(images/cursor.png), auto;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background-size: cover;
+    }
 
-<img src="images/neocities.png" alt="testimage" height="75px" width = "200px">
+    #homebox{
+      position: absolute;
+      border: #D4A3C4 7px double;
+      border-image: auto;
+      height: 450px;
+      width: 1000px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-image: url(images/backgrounds/home.jpg);
+    }
 
-<!--can also change image sizes in style section-->
+    #header{
+    text-align: start;
+    padding: 10px;
+    border: 2px solid #D4A3C4;
+    }
 
-<style>
-  #para1{
-    background-color: pink;
-    color: blueviolet;
+    #content {
+      display: flex;
+      flex: 1; /* Makes this section take up remaining vertical space */
+    }
+
+    #sidebar {
+      text-align: center;
+      width: 18%;
+      padding: 1px;
+      border: 2px solid #D4A3C4;
+      display: flex;
+      flex-direction: column; /* Arrange child elements in a column */
+      align-items: start; /* Align items to the left*/
+      gap: 30px;
+    }
+
+    #main-content {
+      display: flex; /* Use Flexbox to align items in a row */
+      justify-content: space-between; /* Optional: Add space between divs */
+      align-items: center; /* Align items vertically (if heights differ) */
+      gap: 150px;
+    }
+
+
+    #footer{
+      position: fixed; /* Stays in place even during scrolling */
+      bottom: 5px; /* Distance from the bottom of the page */
+      left: 50%; /* Align horizontally at the center */
+      transform: translateX(-50%); /* Offset by 50% of its width for perfect centering */
+      text-align: center;
+      z-index: 1000;
+    }
+
+    #heading {
+      font-family: Persona5Menu;
+    }
+
+    .box {
+      flex: 1; /* Each div takes up equal width */
+      text-align: center; /* Center text or content inside */
+      padding: 10px;
+      border: 1px solid #ccc;
+    }
+
+    .text-container {
+      flex: 1; /* Allows this div to grow and take up remaining space */
+      font-size: 1.2em; /* Example text size */
+      padding: 1px;
+      background-color: #f0f0f0; /* Light gray background */
+    }
+
+    hr {
+  opacity: 0;
+}
+.navbar {
+  text-align: center;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  align-items: center; /* Center the buttons horizontally */
+  gap: 16px;
+
+}
+.link-wrapper {
+  position: relative;
+  display: inline-block;
+  margin: 0px 16px;
+
+  .fallback {
+    font-size: 2.25em;
+    letter-spacing: 4px;
+    line-height: 0;
+    opacity: 0;
+    position: relative;
+    top: 15px;
+    left: 0;
   }
-  img{
-    width: 200px;
-    height: 60px;
+  .shape-wrapper {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
   }
-  body{
-    background-size: cover;
+  &:hover {
+    z-index: 9999;
+    .shape-wrapper {
+      transform: rotate(-6deg);
+      display: block;
+      .shape.cyan-fill {
+        transform: scale(3,.1);
+      }
+    }
+    .img-wrapper {
+      img {
+       animation: tiltBounce .15s ease;
+       animation-fill-mode: forwards;
+       display: block;
+        &.normal {
+           mix-blend-mode: darken;
+        }
+      }
+    }
   }
-</style>
+  &:nth-child(even) {
+    &:hover {
+      .shape-wrapper { transform: rotate(11deg) }
+      .img-wrapper img {
+         animation: tiltBounceAlt .15s ease;
+         animation-fill-mode: forwards;
+      }
+    }
+  }
+}
 
+.img-wrapper {
+  img {
+    width: auto;
+    height: 40px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: -5px;
+    margin: 0 auto;
+    position: absolute;
+    z-index: 999;
+    &.normal {
+      display: block;
+    }
+    &.active {
+      display: none;
+      z-index: -1;
+    }
+  }
+}
+.shape-wrapper {
+  filter: sepia(50%) saturate(3);
+  .shape {
+    transition: all .1s linear;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    overflow: hidden;
+    svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    &.cyan-fill {
+      mix-blend-mode: screen;
+      animation-delay: 0.05s;
+      animation-duration: .4s;
+    }
+    &.red-fill {
+      animation-duration: .45s;
+      animation-delay: 0.08s;
+      opacity: .8;
+    }
+  }
+}
+
+
+.jelly {
+  -webkit-animation-name: jelly;
+          animation-name: jelly;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+@keyframes tiltBounce {
+  0% {
+    transform: scale(1) rotate(-7deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(-7deg);
+  }
+  100% {
+    transform: scale(1.15) rotate(-7deg);
+  }
+}
+@keyframes tiltBounceAlt {
+  0% {
+    transform: scale(1) rotate(7deg);
+  }
+  50% {
+    transform: scale(1.5) rotate(7deg);
+  }
+  100% {
+    transform: scale(1.15) rotate(7deg);
+  }
+}
+@keyframes jelly {
+  0% {
+    width: 100%; transform: scale(1.25,1) skewX(20deg) translateY(3px) rotateX(40deg) rotateY(10deg) rotateZ(-10deg);
+  }
+  50% { width: 100%; transform: scale(1.25,1.1) skewX(-15deg) translateY(-2px) translateZ(-30px); }
+  100% { width: 100%; transform: scale(1.25,1) skewX(20deg) translateY(3px) rotateX(-40deg) rotateY(-10deg) rotateZ(-15deg); }
+}
+
+
+  </style>
+
+  <!--elements-->
+
+  <body>
+
+    <div id="homebox">
+
+      <div id="header"><h1 id="heading">print("hello world!")</h1>
+        <p>Hi, welcome to my website! This is a work in progress but stay tuned for new updates. Trying to make a portfolio website for all my coding projects and showcase them here. I am stil learning how to use HTML and CSS to make this website look pretty and functional :)</p>
+      </div>
+      <div id="content">
+        <div id="sidebar">Sidebar
+          <!--about-->
+          <a class="link-wrapper" href="#">
+        <span class="fallback">About</span>
+        <div class="img-wrapper">
+          <img class="normal" src="images/menu/aboutnormal.png">
+          <img class="active" src="images/menu/aboutactive.png">
+        </div>
+        <div class="shape-wrapper">
+          <div class="shape red-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#FF0000" points="19.5,0,110.7,0,80.1,32.7,3.1,47 "/>
+    </svg></div>
+          <div class="shape cyan-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#00FFFF" points="11,3,85.1,0 118.8,45.6,14.3,29 "/>
+    </svg></div>
+        </div>
+          </a>
+          <!--blog-->
+          <a class="link-wrapper" href="blog.html">
+        <span class="fallback">Blog</span>
+        <div class="img-wrapper">
+          <img class="normal" src="images/menu/blognormal.png">
+          <img class="active" src="images/menu/blogactive.png">
+        </div>
+        <div class="shape-wrapper">
+          <div class="shape red-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#FF0000" points="0,7.1 127.3,0 32.3,64 4.8,58.2">
+    </svg></div>
+          <div class="shape cyan-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#00FFFF" points="14,0.5 127.4,0 77.4,164 2.3,61.1 "/>
+    </svg></div>
+        </div>
+          </a>
+          <!--index-->
+          <a class="link-wrapper" href="#">
+        <span class="fallback">Index</span>
+        <div class="img-wrapper">
+          <img class="normal" src="images/menu/indexnormal.png">
+          <img class="active" src="images/menu/indexactive.png">
+        </div>
+        <div class="shape-wrapper">
+          <div class="shape red-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#FF0000" points="29.5,8.5 150.7,0 108.1,32.7 3.1,47 "/>
+    </svg></div>
+          <div class="shape cyan-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#00FFFF" points="0.3,17 125.1,0 68.8,45.6 24.3,39 "/>
+    </svg></div>
+        </div>
+          </a>
+          <!--archive-->
+          <a class="link-wrapper" href="#">
+        <span class="fallback">Archive</span>
+        <div class="img-wrapper">
+          <img class="normal" src="images/menu/archivenormal.png">
+          <img class="active" src="images/menu/archiveactive.png">
+        </div>
+        <div class="shape-wrapper">
+          <div class="shape red-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#FF0000" points="15.5,0 70.7,0 118.1,32.7 43.1,47 "/>
+    </svg></div>
+          <div class="shape cyan-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#00FFFF" points="17.3,0 105.1,0 68.8,45.6 24.3,39 "/>
+    </svg></div>
+        </div>
+          </a>
+          <!--credits-->
+          <a class="link-wrapper" href="#">
+        <span class="fallback">Credits</span>
+        <div class="img-wrapper">
+          <img class="normal" src="images/menu/creditsnormal.png">
+          <img class="active" src="images/menu/creditsactive.png">
+        </div>
+    <div class="shape-wrapper">
+          <div class="shape red-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#FF0000" points="15.5,0 70.7,0 118.1,32.7 43.1,47 "/>
+    </svg></div>
+          <div class="shape cyan-fill jelly"><svg x="0px" y="0px"
+         viewBox="0 0 108.1 47" enable-background="new 0 0 108.1 47">
+    <polygon fill="#00FFFF" points="17.3,0 105.1,0 68.8,45.6 24.3,39 "/>
+    </svg></div>
+        </div>
+          </a>
+
+        </div>
+        <div id="main-content" class="container">
+          <div class="box">
+            Main Content
+            <p>I like <em title="Ryuji is best"> persona</em> hello </p>
+            <p>Subscribe to my <abbr title="Youtube">YT</abbr> channel</p>
+            <a href="https://github.com/ZXLTRVN">This is my GitHub account :D</a>
+          </div>
+
+
+          <div id="futabalaptop" class="box">
+            <img src="images/home/futabalaptop.jpg" height="280px" width="280px">
+          </div>
+
+        </div>
+      </div>
+
+
+  </div>
+  <div id="footer">
+    <img src="images/neocities.png" alt="testimage" height="75px" width = "200px">
+    <footer>© 2024 Yolia </footer>
+    </div>
   </body>
 </html>

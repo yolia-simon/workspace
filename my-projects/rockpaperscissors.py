@@ -13,28 +13,28 @@ while True:
   comp_options = random.choice(options) #generates random computer choice
 
   while True:
-    choice = input("Choose rock - 1 , paper - 2 or scissors - 3: ")
-    if choice.isdigit():
-      choice = int(choice)
-      if (choice == 1 or choice == 2 or choice == 3):
+    user = input("Choose rock - 1 , paper - 2 or scissors - 3: ")
+    if user.isdigit():
+      user = int(user)
+      if (user == 1 or user == 2 or user == 3):
         break #valid input, code continues
     print('Please enter a valid option: ')
 
-  if (choice == 1):  #changes number input to an option
-      choice = "rock"
-  elif (choice == 2):
-      choice = "paper"
-  elif (choice == 3):
-      choice = "scissors"
+  if (user == 1):  #changes number input to an option
+      user = "rock"
+  elif (user == 2):
+      user = "paper"
+  elif (user == 3):
+      user = "scissors"
 
   #user and computer choices
-  print(f"You chose {choice}")
+  print(f"You chose {user}")
   print(f"Computer chose {comp_options}")
 
   #determine the winner
-  if (choice == comp_options):
-      print(f"Both players chose {choice}. It's a tie!")
-  elif ((choice == 'paper' and comp_options == 'rock') or (choice == 'rock' and comp_options == 'scissors') or {choice == 'scissors' and comp_options == 'paper'}):
+  if (user == comp_options):
+      print(f"Both players chose {user}. It's a tie!")
+  elif ((user == 'paper' and comp_options == 'rock') or (user == 'rock' and comp_options == 'scissors') or (user == 'scissors' and comp_options == 'paper')):
       print("You win!")
   else:
       print("Computer wins!")
