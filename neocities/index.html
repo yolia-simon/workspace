@@ -33,93 +33,98 @@
 
     html {
       background-image: url(images/background.jpg);
+      background-size: cover; /* Ensures the image covers the entire page */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat;
       font-family: Persona5;
       color:rgb(101, 10, 123);
       text-align: center;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; /* Full viewport height */
+      flex-direction: column;
     }
 
     body{
       cursor: url(images/cursor.png), auto;
       margin: 0;
-      width: 100vw;
-      height: 100vh;
+      overflow-y: hidden;
       background-size: cover;
-    }
-
-    #homebox{
-      position: absolute;
-      border: #D4A3C4 7px double;
-      border-image: auto;
-      height: 450px;
-      width: 1000px;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      margin: auto;
-      background-image: url(images/backgrounds/home.jpg);
-    }
-
-    #header{
-    text-align: start;
-    padding: 10px;
-    border: 2px solid #D4A3C4;
-    }
-
-    #content {
-      display: flex;
-      flex: 1; /* Makes this section take up remaining vertical space */
-    }
-
-    #sidebar {
+      scroll-behavior: smooth;
+      flex-direction: column;
       text-align: center;
-      width: 18%;
-      padding: 1px;
-      border: 2px solid #D4A3C4;
-      display: flex;
-      flex-direction: column; /* Arrange child elements in a column */
-      align-items: start; /* Align items to the left*/
-      gap: 30px;
-    }
-
-    #main-content {
-      display: flex; /* Use Flexbox to align items in a row */
-      justify-content: space-between; /* Optional: Add space between divs */
-      align-items: center; /* Align items vertically (if heights differ) */
-      gap: 150px;
-    }
-
-
-    #footer{
-      position: fixed; /* Stays in place even during scrolling */
-      bottom: 5px; /* Distance from the bottom of the page */
-      left: 50%; /* Align horizontally at the center */
-      transform: translateX(-50%); /* Offset by 50% of its width for perfect centering */
-      text-align: center;
-      z-index: 1000;
     }
 
     #heading {
       font-family: Persona5Menu;
     }
 
-    .box {
-      flex: 1; /* Each div takes up equal width */
-      text-align: center; /* Center text or content inside */
-      padding: 10px;
-      border: 1px solid #ccc;
+    #homebox{
+      display: flexbox;
+      border: #D4A3C4 7px double;
+      height: 600px;
+      width: 1000px;
+      top: 0;
+      bottom: 1000px;
+      left: 0;
+      right: 0;
+      margin: auto;
+      background-image: url(images/backgrounds/home.jpg);
+      flex: 1;
+      overflow-y: auto; /* Enables vertical scrolling within the box */
+    scrollbar-width: thin; /* Adjust scrollbar appearance */
+    scrollbar-color: #D4A3C4 transparent; /* Customize scrollbar color */
     }
 
-    .text-container {
-      flex: 1; /* Allows this div to grow and take up remaining space */
-      font-size: 1.2em; /* Example text size */
-      padding: 1px;
-      background-color: #f0f0f0; /* Light gray background */
+    #header{
+    text-align: start;
+    border: 2px solid #D4A3C4;
+    }
+
+    #main-content {
+      display: flex; /* Use Flexbox to align items in a row */
+      align-items: center; /* Align items vertically (if heights differ) */
+      border: 2px solid #D4A3C4;
+    }
+    #content {
+      display: flex;
+      flex: 1; /* Makes this section take up remaining vertical space */
+      overflow: auto;
+
+    }
+
+    #box1 {
+      width: 70%;
+      border: 2px solid #D4A3C4;
+      display: flex;
+      flex-direction: column; /* Arrange child elements in a column */
+      gap: 30px;
+
+
+    }
+
+
+    #box2{
+      text-align:justify;
+      left: 10px;
+    }
+
+    #box3{
+      border: 2px solid #D4A3C4;
+    }
+
+
+    .footer{
+      width: 100%; /* Stretch across the entire width of the viewport */
+      text-align: center; /* Center the text inside the footer */
+      padding: 10px 0; /* Add some space around the text */
+      z-index: 1000; /* Ensure it stays above other elements */
     }
 
     hr {
-  opacity: 0;
-}
+      opacity: 0;
+    }
 .navbar {
   text-align: center;
   margin-top: 18px;
@@ -272,21 +277,26 @@
 }
 
 
+
   </style>
 
   <!--elements-->
 
   <body>
 
-    <div id="homebox">
+    <div id="homebox" class="border-container">
+
 
       <div id="header"><h1 id="heading">print("hello world!")</h1>
         <p>Hi, welcome to my website! This is a work in progress but stay tuned for new updates. Trying to make a portfolio website for all my coding projects and showcase them here. I am stil learning how to use HTML and CSS to make this website look pretty and functional :)</p>
       </div>
       <div id="content">
-        <div id="sidebar">Sidebar
+        <div id="box1" class="sidebar">
+          <div>
+            <img src="images/menu/computergirl.jpg" alt="image_not_displayed" height="200px">
+          </div>
           <!--about-->
-          <a class="link-wrapper" href="#">
+          <a class="link-wrapper" href="about.html">
         <span class="fallback">About</span>
         <div class="img-wrapper">
           <img class="normal" src="images/menu/aboutnormal.png">
@@ -321,7 +331,7 @@
     </svg></div>
         </div>
           </a>
-          <!--index-->
+          <!--index (havent added a page yet)-->
           <a class="link-wrapper" href="#">
         <span class="fallback">Index</span>
         <div class="img-wrapper">
@@ -340,7 +350,7 @@
         </div>
           </a>
           <!--archive-->
-          <a class="link-wrapper" href="#">
+          <a class="link-wrapper" href="archive.html">
         <span class="fallback">Archive</span>
         <div class="img-wrapper">
           <img class="normal" src="images/menu/archivenormal.png">
@@ -358,7 +368,7 @@
         </div>
           </a>
           <!--credits-->
-          <a class="link-wrapper" href="#">
+          <a class="link-wrapper" href="credits.html">
         <span class="fallback">Credits</span>
         <div class="img-wrapper">
           <img class="normal" src="images/menu/creditsnormal.png">
@@ -375,29 +385,63 @@
     </svg></div>
         </div>
           </a>
+          <div>
+            <img src="images/menu/cutegirl.gif" alt="image_not_displayed" height="100px">
+          </div>
 
         </div>
-        <div id="main-content" class="container">
-          <div class="box">
-            Main Content
-            <p>I like <em title="Ryuji is best"> persona</em> hello </p>
-            <p>Subscribe to my <abbr title="Youtube">YT</abbr> channel</p>
-            <a href="https://github.com/ZXLTRVN">This is my GitHub account :D</a>
-          </div>
+        <div id="box2">
+          <p>I'm Yolia! I'm a final-year Physics student with a passion for solving complex problems and a growing interest in programming. I enjoy anime, art, music and gaming! I also enjoy being creative and making things which has led me to pursue a career in software engineering. My journey blends a strong foundation in analytical thinking with a drive to create innovative software solutions.</p>
+          <br>
+          <u>What I Bring to the Table:</u>
+          <ul>
+            <li>
+              <i>Analytical Mindset:</i> My physics background equips me with problem-solving skills and the ability to tackle challenges with a methodical approach.
+            </li>
+            <li>
+              <i>Technical Skills:</i> I am proficient in Python with  experience in C, HTML/CSS, Git Repositories and developing my own mini projects on GitHub.
+            </li>
+            <li>
+              <i>Eager to Learn:</i> I briefly learnt Python in my university course and expanded upon my knowledge in my own time. I am self taught in HTML/CSS and I'm currently learning bits of JavaScript.
+            </li>
+          </ul>
 
+          <u>Explore My Website:</u>
+          <ul>
+            <li>About: Dive into my journey from physics to software engineering.</li>
+            <li>Blog: Read about my thoughts on coding, tech trends, and more.</li>
+            <li>Projects: Check out my software projects and accomplishments</li>
+            <li>Archive</li>
+            <li>Credits: Places I've taken inspiration from to make this website</li>
+          </ul>
 
-          <div id="futabalaptop" class="box">
-            <img src="images/home/futabalaptop.jpg" height="280px" width="280px">
-          </div>
+          I'm always open to exciting opportunities and collaborations. Feel free to explore and reach out if you'd like to collaborate or to just chat!:)
+          Feel free to contact me via [email/GitHub].
+
+          <a href="https://github.com/ZXLTRVN">This is my GitHub account :D</a>
+
+        </div>
+        <div id="box3">
+          <img src="images/home/futabalaptop.jpg" alt="image_not_displayed" height="280px" width="280px">
+          <div id="box4">box here</div>
+        </div>
+
+        <div id="main-content">
+
 
         </div>
       </div>
 
 
   </div>
-  <div id="footer">
-    <img src="images/neocities.png" alt="testimage" height="75px" width = "200px">
-    <footer>© 2024 Yolia </footer>
-    </div>
+
+
+
   </body>
+  <footer id="footer">
+    <br>
+    <img src="images/neocities.png" alt="image_not_displayed" height="50px" width = "150px">
+    <br>
+    © 2024 Yolia ☆
+  </footer>
 </html>
