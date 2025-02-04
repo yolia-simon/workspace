@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <style>
+
+    @font-face {
+      font-family: Persona5Menu;
+      src: url(fonts/Persona5MenuFont.ttf);
+    }
+
+    @font-face {
+      font-family: Persona5;
+      src: url(fonts/Persona5regfont.ttf);
+    }
+
+    html, body {
+      height: 100%;
+      font-family: Persona5, sans-serif;
+      color: rgb(101, 10, 123);
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: thin; /* Adjust scrollbar appearance */
+      scrollbar-color: #a3b7d4 transparent;
+      overflow-y: auto;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh; /* Full viewport height */
+      flex-direction: column;
+      cursor: url(images/cursor.png), auto;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      background-image: url('images/.'); /*add background later*/
+      /*background-size:;*/
+      background-repeat: no-repeat;
+      background-position: center;
+      text-align: center;
+    }
+
+    .heading {
+      font-family: Persona5Menu;
+    }
+
+    .navbar {
+      background-color: rgba(150, 75, 215, 0.493);
+      position: sticky;
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      text-align: center;
+      padding: 14px 16px;
+
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbutton {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 14px 16px;
+      background-color: inherit;
+      font-family: inherit; /* Important for vertical align on mobile phones */
+      margin: 0; /* Important for vertical align on mobile phones */
+    }
+
+    /* Add a red background color to navbar links on hover */
+    .navbar a:hover, .dropdown:hover .dropbutton {
+      background-color: rgb(0, 115, 255);
+
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(231, 172, 213, 0.466);
+      z-index: 1;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+      float: none;
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+    }
+
+    /* Add a grey background color to dropdown links on hover */
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    /* Show the dropdown menu on hover */
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+
+    .layout {
+      width: 100%;
+
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      grid-auto-flow: row dense;
+
+      align-content: start;
+    }
+
+
+  </style>
+
+  <body>
+
+    <div class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+
+      <div class="dropdown">
+        <button class="dropbutton">Blog
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#">Project 1</a>
+          <a href="#">Project 2</a>
+          <a href="#">Project 3</a>
+        </div>
+        <!-- make blog button clickable -->
+
+      </div>
+      <a href="index_page.html">Index</a>
+      <a href="archive.html">Archive</a>
+      <a href="credits.html">Credits</a>
+    </div>
+
+    <section class="layout">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </section>
+    <p>inspiration https://www.w3schools.com/ images taken from my own pinterest board https://uk.pinterest.com/ZXLTRXN6Bil/website-design-ideas/ font generator from https://www.fontbolt.com/font/persona-5-font/ nav bar inspo from https://codepen.io/kevinquach/pen/JNGmKG p5 dialogue generator www.p5generator.com profile pic from picrow generator symbols from https://www.cutesymbols.net </p>
+  </body>
+</html>

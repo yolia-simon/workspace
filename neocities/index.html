@@ -4,7 +4,7 @@
 
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- controls scaling of the web page-->
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- controls scaling of the web page-->
   <meta name="keywords" content="HTML, CSS, meta"> <!--put keywords for users to search for your website-->
   <meta name="description" content="This is a page for meta tags in HTML"> <!--add description for your website-->
   <meta name="revised" content="Simplicode, 13/10/24"> <!--shows last changed info-->
@@ -12,7 +12,7 @@
 
   <!--refreshes page every 3 sec
   <meta http-equiv="refresh" content="3"> -->
-  <title>Yolia's Website</title>
+  <title>Welcome to my Website!</title>
 
   </head>
 
@@ -32,7 +32,7 @@
 
 
     html {
-      background-image: url(images/background.jpg);
+      background-image: url(images/backgrounds/homepage.jpg);
       background-size: cover; /* Ensures the image covers the entire page */
       background-position: center; /* Centers the image */
       background-repeat: no-repeat;
@@ -44,11 +44,14 @@
       padding: 0;
       min-height: 100vh; /* Full viewport height */
       flex-direction: column;
+      scrollbar-width: thin; /* Adjust scrollbar appearance */
+      scrollbar-color: #D4A3C4 transparent;
+      cursor: url(images/cursor.png), auto;
+      overflow-y: auto; /*allows website to scroll*/
     }
 
     body{
-      cursor: url(images/cursor.png), auto;
-      margin: 0;
+      margin-top: 3%;
       overflow-y: hidden;
       background-size: cover;
       scroll-behavior: smooth;
@@ -70,11 +73,11 @@
       left: 0;
       right: 0;
       margin: auto;
-      background-image: url(images/backgrounds/home.jpg);
+      background-image: url(images/backgrounds/homebox.jpg);
       flex: 1;
       overflow-y: auto; /* Enables vertical scrolling within the box */
-    scrollbar-width: thin; /* Adjust scrollbar appearance */
-    scrollbar-color: #D4A3C4 transparent; /* Customize scrollbar color */
+      scrollbar-width: thin; /* Adjust scrollbar appearance */
+      scrollbar-color: #D4A3C4 transparent; /* Customize scrollbar color */
     }
 
     #header{
@@ -331,8 +334,8 @@
     </svg></div>
         </div>
           </a>
-          <!--index (havent added a page yet)-->
-          <a class="link-wrapper" href="#">
+          <!--index -->
+          <a class="link-wrapper" href="index_page.html">
         <span class="fallback">Index</span>
         <div class="img-wrapper">
           <img class="normal" src="images/menu/indexnormal.png">
@@ -410,7 +413,8 @@
           <ul>
             <li>About: Dive into my journey from physics to software engineering.</li>
             <li>Blog: Read about my thoughts on coding, tech trends, and more.</li>
-            <li>Projects: Check out my software projects and accomplishments</li>
+            <li>Index: Check out my software projects and accomplishments and contact info. </li>
+            <!-- Skills Summary: A categorized and detailed breakdown of your technical expertise. -->
             <li>Archive</li>
             <li>Credits: Places I've taken inspiration from to make this website</li>
           </ul>
@@ -423,7 +427,9 @@
         </div>
         <div id="box3">
           <img src="images/home/futabalaptop.jpg" alt="image_not_displayed" height="280px" width="280px">
-          <div id="box4">box here</div>
+          <div id="box4">
+            chat box here
+          </div>
         </div>
 
         <div id="main-content">
@@ -438,9 +444,9 @@
 
 
   </body>
+  <br>
   <footer id="footer">
-    <br>
-    <img src="images/neocities.png" alt="image_not_displayed" height="50px" width = "150px">
+    <img src="images/neocities.png" alt="image_not_displayed" height="30px" width = "100px"> <a href="https://iframe.chat/"><img src="https://iframe.chat/chattable-alt.gif" title="Chattable" alt="Chattable" /></a>
     <br>
     © 2024 Yolia ☆
   </footer>
