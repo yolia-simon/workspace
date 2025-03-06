@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing...</title>
   </head>
 
   <style>
@@ -212,6 +214,21 @@
       </div>
     </div>
 
+    <div class="card">
+      <h2>Owner Login</h2>
+      <input type="email" id="email" placeholder="Email" style="width: 100%; padding: 10px;">
+      <input type="password" id="password" placeholder="Password" style="width: 100%; padding: 10px;">
+      <button onclick="login()" style="background-color: green; color: white; padding: 10px; border: none;">Login</button>
+      <button onclick="logout()" style="background-color: red; color: white; padding: 10px; border: none; display: none;" id="logoutBtn">Logout</button>
+    </div>
+
+    <div class="card" id="postForm" style="display: none;">
+      <h2>Add a New Blog Post</h2>
+      <input type="text" id="title" placeholder="Post Title" style="width: 100%; padding: 10px;">
+      <textarea id="content" placeholder="Write your post here..." style="width: 100%; padding: 10px;"></textarea>
+      <button onclick="addPost()" style="background-color: blue; color: white; padding: 10px; border: none;">Add Post</button>
+    </div>
+
     <div class="row">
       <div class="leftcolumn">
         <div class="card">
@@ -247,6 +264,12 @@
     <div class="footer">
       <h2>Footer goes here</h2>
     </div>
+
+    <!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script> <!-- Add this for authentication -->
+<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
+<script src="app.js"></script>
 
 
   </body>
